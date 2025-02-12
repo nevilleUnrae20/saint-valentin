@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Debug Page</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        pre { 
+            background-color: #f4f4f4; 
+            padding: 10px; 
+            overflow-x: auto; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Diagnostic de l'application</h1>
+    
+    <h2>Contenu du HTML</h2>
+    <pre id="html-content"></pre>
+    
+    <h2>Contenu du CSS</h2>
+    <pre id="css-content"></pre>
+    
+    <h2>Contenu du JavaScript</h2>
+    <pre id="js-content"></pre>
+
+    <script>
+        // Charger et afficher le contenu des fichiers
+        async function loadFile(url) {
+            try {
+                const response = await fetch(url);
+                return await response.text();
+            } catch (error) {
+                return `Erreur de chargement : ${error}`;
+            }
+        }
+
+        async function displayFileContents() {
+            document.getElementById('html-content').textContent = await loadFile('index.html');
+            document.getElementById('css-content').textContent = await loadFile('styles.css');
+            document.getElementById('js-content').textContent = await loadFile('script.js');
+        }
+
+        displayFileContents();
+    </script>
+</body>
+</html>

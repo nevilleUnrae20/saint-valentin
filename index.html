@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff6b6b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Notre Saint Valentin 💘</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="apple-touch-icon" href="./heart-icon.png">
+</head>
+<body>
+    <div class="container">
+        <h1>On va faire comme chez les blancs </h1>
+        <p class="intro-text">Choisis quand puis où tu veux passer notre Saint Valentin... 💕</p>
+        
+        <div class="calendar-container">
+            <label for="valentine-date">Sélectionne une date spéciale 📅</label>
+            <input type="date" id="valentine-date" class="calendar-input" required>
+        </div>
+        
+        <button id="continue-btn" class="continue-btn">Continuons 💘</button>
+
+        <div class="conseil-container">
+            <h3>💡 Conseil du Jour 💡</h3>
+            <div id="conseil-text" class="conseil-text">
+                Clique sur le bouton pour découvrir un conseil romantique !
+            </div>
+            <button id="conseil-btn" class="conseil-btn">Nouveau Conseil</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

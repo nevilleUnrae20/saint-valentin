@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yesss! Pas le 14 Février</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Yesss! 🎉</h1>
+        <p class="intro-text">Parfait! Maintenant, choisis notre destination...</p>
+        
+        <div class="location-choices">
+            <button class="location-btn">🏖️ Plage Romantique</button>
+            <button class="location-btn">🍽️ Restaurant Chic</button>
+            <button class="location-btn">🏞️ Pique-nique Surprise</button>
+        </div>
+    </div>
+
+    <style>
+        .location-choices {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .location-btn {
+            background-color: white;
+            color: #ff6b6b;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .location-btn:hover {
+            transform: scale(1.05);
+            background-color: #ff9a8b;
+            color: white;
+        }
+    </style>
+</body>
+</html>

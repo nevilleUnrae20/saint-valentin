@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Confirmation Saint Valentin 💘</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Es-tu sûre de vouloir choisir le 14 Février ? 💘</h1>
+        
+        <div class="confirmation-buttons">
+            <button id="confirm-yes" class="continue-btn">Oui, je suis sûre !</button>
+            <button id="confirm-change" class="continue-btn">Non, je veux changer</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('confirm-yes').addEventListener('click', () => {
+            window.location.href = 'valentine-lieux.html';
+        });
+
+        document.getElementById('confirm-change').addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

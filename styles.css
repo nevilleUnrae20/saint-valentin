@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Satisfy', cursive;
+    background: linear-gradient(135deg, #ff6b6b, #ff9a8b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.calendar-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.calendar-input:focus {
+    outline: none;
+    border-color: #ff9a8b;
+}
+
+.continue-btn {
+    background-color: white;
+    color: #ff6b6b;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+}
+
+.continue-btn:hover {
+    transform: scale(1.05);
+    background-color: #ff9a8b;
+    color: white;
+}
+
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b6b"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') no-repeat center/contain;
+    animation: heartFloat 2s ease-in-out infinite;
+    opacity: 0;
+    z-index: 10;
+}
+
+@keyframes heartFloat {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg) scale(0.7); 
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translateY(-50px) rotate(360deg) scale(1); 
+        opacity: 1;
+    }
+}
+
+@keyframes heartBurst {
+    0% { 
+        opacity: 0; 
+        transform: scale(0) rotate(0deg); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.5) rotate(180deg); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: scale(2) rotate(360deg); 
+    }
+}
+
+.conseil-container {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.conseil-container h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.conseil-text {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}
+
+.conseil-btn {
+    background-color: white;
+    color: #ff6b6b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.conseil-btn:hover {
+    transform: scale(1.05);
+    background-color: #ff9a8b;
+    color: white;
+}
+
+.confirmation-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.confirmation-buttons .continue-btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.lieux-container, .dress-code-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.lieu-btn, .dress-code-btn {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.lieu-btn:hover, .dress-code-btn:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dress-code-btn.selected {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #ff6b6b;
+}
+
+.heure-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.heure-input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    text-align: center;
+}
+
+.love-details {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.love-details p {
+    color: white;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.love-btn {
+    background-color: white;
+    color: #ff6b6b;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.love-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff9a8b;
+    color: white;
+}
+
+.heart-explosion-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.explosion-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('heart-icon.png') no-repeat center;
+    background-size: contain;
+    animation: explosion 2s ease-out;
+    opacity: 0;
+}
+
+@keyframes explosion {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Animation de transition de page */
+body.page-transition {
+    animation: fadeOut 1s ease-in-out;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+/* Media Queries pour différents appareils */
+/* iPhone 13 Pro Max (428 x 926) */
+@media screen and (max-width: 428px) {
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .calendar-input, .continue-btn {
+        max-width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+/* Petits smartphones */
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Tablettes */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        max-width: 600px;
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Mode paysage */
+@media screen and (max-height: 600px) {
+    body {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+}
+
+/* Ajouter des effets supplémentaires */
+.container::before {
+    content: '❤️';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    font-size: 3rem;
+    opacity: 0.3;
+}
+
+.container::after {
+    content: '💕';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 3rem;
+    opacity: 0.3;
+}
